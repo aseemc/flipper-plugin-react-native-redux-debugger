@@ -1,0 +1,42 @@
+{
+  "$schema": "https://fbflipper.com/schemas/plugin-package/v2.json",
+  "name": "flipper-plugin-react-native-redux-debugger",
+  "id": "react-native-redux-debugger",
+  "version": "0.0.1",
+  "main": "dist/bundle.js",
+  "flipperBundlerEntry": "src/index.js",
+  "license": "MIT",
+  "keywords": [
+    "flipper-plugin"
+  ],
+  "icon": "apps",
+  "title": "AC Redux Debugger",
+  "category": "Redux",
+  "scripts": {
+    "lint": "flipper-pkg lint",
+    "prepack": "flipper-pkg lint && flipper-pkg bundle",
+    "build": "flipper-pkg bundle",
+    "watch": "flipper-pkg bundle --watch"
+  },
+  "peerDependencies": {
+    "antd": "latest",
+    "flipper": "0.69.0",
+    "flipper-plugin": "0.69.0"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "latest",
+    "@babel/preset-typescript": "latest",
+    "@types/jest": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "antd": "latest",
+    "flipper": "0.69.0",
+    "flipper-pkg": "latest",
+    "flipper-plugin": "0.69.0",
+    "jest": "latest"
+  },
+  "dependencies": {
+    "brace": "^0.11.1",
+    "react-ace": "^9.2.1"
+  }
+}
