@@ -20,8 +20,8 @@
   },
   "peerDependencies": {
     "antd": "latest",
-    "flipper": "0.69.0",
-    "flipper-plugin": "0.69.0"
+    "flipper": "latest",
+    "flipper-plugin": "latest"
   },
   "devDependencies": {
     "@babel/preset-react": "latest",
@@ -30,9 +30,9 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "antd": "latest",
-    "flipper": "0.69.0",
+    "flipper": "latest",
     "flipper-pkg": "latest",
-    "flipper-plugin": "0.69.0",
+    "flipper-plugin": "latest",
     "jest": "latest"
   },
   "dependencies": {

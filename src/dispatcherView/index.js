@@ -3,17 +3,26 @@ import {
   Panel,
   Button,
 } from 'flipper';
-import brace from "brace";
+import "brace";
 import AceEditor from "react-ace";
 import "brace/mode/json";
 import "brace/theme/chrome";
 
 import { Spacer, DispatchContainer } from '../components';
-import { ACTION_TABS } from '../constants';
+import { validateJson } from '../utils';
 
-const DispatcherView = ({ action }) => {
-  const [activeActionTab, setActiveActionTab] = useState(ACTION_TABS.ACTION);
-  const [newAction, setNewAction] = useState(null);
+const DispatcherView = ({ client }) => {
+  const [newAction, setNewAction] = useState({});
+
+  const handleDispatch = async () => {
+    const validJson = validateJson(newAction);
+    if (validJson) {
+      await client.send('dispatch', validJson);
+      setNewAction({});
+    } else {
+      alert('Invalid action.')
+    }
+  }
 
   return (
     <Panel floating={false} heading='Dispatch Action' padded={false}>
@@ -34,7 +43,7 @@ const DispatcherView = ({ action }) => {
         />
         <Spacer />
         <Button
-          onClick={() => console.log('=>>>click')}
+          onClick={handleDispatch}
           type="primary"
           style={{ width: 200 }}
         >

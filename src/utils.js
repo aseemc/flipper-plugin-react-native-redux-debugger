@@ -8,11 +8,10 @@ export const formatTimestamp = (timestamp) => {
   return `${hours}:${minutes}:${seconds}.${milliSeconds}`;
 }
 
-export const isJsonString = (str) => {
+export const validateJson = (value) => {
   try {
-      JSON.parse(str);
-  } catch (e) {
-      return false;
-  }
-  return true;
+    return JSON.parse(value)
+  } catch (e) { }
+
+  return null;
 }

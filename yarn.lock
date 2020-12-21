@@ -3898,7 +3898,7 @@ flipper-plugin-lib@0.69.0:
     semver "^7.3.2"
     tmp "^0.2.1"
 
-flipper-plugin@0.69.0:
+flipper-plugin@0.69.0, flipper-plugin@latest:
   version "0.69.0"
   resolved "https://registry.yarnpkg.com/flipper-plugin/-/flipper-plugin-0.69.0.tgz#8f3b206949b8f13ff5b63f6b603bf6dc3aaa8ad6"
   integrity sha512-8ldoAhKt7Cogjq4XdUqLZDuYhVYKVw4KHYY2sQl6xcqEx6rAGqHTiNw8C5thFTTDYNhTv2t1DtSnSp+X9GHTKw==
@@ -3908,7 +3908,7 @@ flipper-plugin@0.69.0:
     immer "^8.0.0"
     react-element-to-jsx-string "^14.3.2"
 
-flipper@0.69.0:
+flipper@latest:
   version "0.69.0"
   resolved "https://registry.yarnpkg.com/flipper/-/flipper-0.69.0.tgz#6228eb1ff5d6390683e1cefc6fe67c290e712254"
   integrity sha512-MSW80kBYwXnx4eu6QTVA6HVVh6WVhxx+uNWXlqJyrLAY3A/plXZ7AsP+NS5xKROiEjVvBW9dhoRLyo2uTbpQ8A==

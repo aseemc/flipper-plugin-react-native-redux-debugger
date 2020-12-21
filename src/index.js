@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { usePlugin, createState, useValue, Layout, styled } from 'flipper-plugin';
+import { usePlugin, createState, useValue, Layout } from 'flipper-plugin';
 import { Text, SearchableTable, Button, DetailSidebar } from 'flipper';
 import DetailView from './detailView';
 import { MainContainer } from './components';
@@ -7,8 +7,11 @@ import { COLUMN_SIZE, COLUMNS, APP_ID } from './constants';
 import { formatTimestamp } from './utils';
 import DispatcherView from './dispatcherView';
 
+const clientRef = React.createRef();
+
 export const plugin = (client) => {
   const data = createState({}, { persist: 'data' });
+  clientRef.current = client;
 
   client.onMessage('action', (newActionLog) => {
     data.update((draft) => {
@@ -78,7 +81,7 @@ export const Component = (props) => {
         actions={(<Button onClick={clearData}>🗑️ Clear</Button>)}
       />
       <DetailSidebar>{showDetailView()}</DetailSidebar>
-      <DispatcherView />
+      <DispatcherView client={clientRef.current} />
     </Layout.ScrollContainer>
   );
 }
