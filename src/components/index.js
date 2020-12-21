@@ -23,7 +23,7 @@ export const MainContainer = styled.div({
 });
 
 export const Spacer = styled.div({
-  height: 10,
+  height: 20,
   width: '100%'
 });
 
@@ -32,8 +32,4 @@ export const DispatchContainer = styled.div({
   flexDirection: 'column',
   height: 250,
   width: '100%',
-});
-
-export const ButtonView = styled.div({
-  width: 200,
 });
