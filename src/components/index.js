@@ -14,14 +14,6 @@ export const TabsContainer = styled.div({
   flex: 1,
 });
 
-export const MainContainer = styled.div({
-  display: 'flex',
-  flexDirection: 'column',
-  height: '100%',
-  width: '100%',
-  flex: 1
-});
-
 export const Spacer = styled.div({
   height: 20,
   width: '100%'
