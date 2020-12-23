@@ -15,13 +15,13 @@ export const COLUMN_SIZE = {
 
 export const COLUMNS = {
   timestamp: {
-    value: '🕰️ Time'
+    value: '🕰️ Request time'
   },
   actionType: {
     value: '🧨 Action Type'
   },
   time: {
-    value: '⌛ Execution time'
+    value: '⌛ Duration'
   }
 }
 

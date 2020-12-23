@@ -10,7 +10,8 @@ export const formatTimestamp = (timestamp) => {
 
 export const validateJson = (value) => {
   try {
-    return JSON.parse(value)
+    const json = JSON.parse(value);
+    if (Object.keys(json).length) return json;
   } catch (e) { }
 
   return null;

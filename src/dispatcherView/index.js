@@ -25,7 +25,7 @@ const DispatcherView = ({ client }) => {
   }
 
   return (
-    <Panel floating={false} heading='Dispatch Action' padded={false}>
+    <Panel floating={false} heading='Dispatcher' padded={false}>
       <DispatchContainer>
         <AceEditor
           mode="json"
