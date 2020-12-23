@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { usePlugin, createState, useValue, Layout } from 'flipper-plugin';
 import { Text, SearchableTable, Button, DetailSidebar, Panel } from 'flipper';
+import moment from 'moment';
+
 import DetailView from './detailView';
 import { Header, MainContainer } from './components';
 import { COLUMN_SIZE, COLUMNS, APP_ID } from './constants';
@@ -19,10 +21,6 @@ export const plugin = (client) => {
     });
   });
 
-  client.onDestroy(() => {
-    data.set({});
-  });
-
   return { data };
 }
 
@@ -36,7 +34,7 @@ export const Component = (props) => {
     return {
       columns: {
         timestamp: {
-          value: <Text>{formatTimestamp(requestTime)}</Text>,
+          value: <Text style={{ color: 'grey' }}>{moment(requestTime).format('HH:mm:ss.SSS')}</Text>,
           filterValue: requestTime
         },
         actionType: {

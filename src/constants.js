@@ -9,7 +9,7 @@ export const STATE_TABS = {
 };
 
 export const COLUMN_SIZE = {
-  timestamp: 200,
+  timestamp: 150,
   actionType: 'flex'
 }
 
