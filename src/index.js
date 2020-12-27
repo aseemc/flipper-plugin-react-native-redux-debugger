@@ -22,15 +22,13 @@ export const plugin = (client) => {
 }
 
 export const Component = () => {
-  const [selectedRow, setSelectedRow] = useState({});
   const instance = usePlugin(plugin);
   const data = useValue(instance.data);
-
-  const handleRowHighlighted = (rowId) => setSelectedRow(data[rowId]);
+  const [detailViewRowId, setDetailViewRowId] = useState(null);
 
   const showDetailView = () => {
-    if (Object.keys(selectedRow).length) {
-      return <DetailView {...selectedRow} />
+    if (detailViewRowId) {
+      return <DetailView {...data[detailViewRowId]} />
     }
 
     return null;
@@ -38,7 +36,12 @@ export const Component = () => {
 
   return (
     <Layout.ScrollContainer vertical>
-      <InspectorView instance={instance} handleRowHighlighted={handleRowHighlighted} />
+      <InspectorView
+        client={clientRef.current}
+        instance={instance}
+        data={data}
+        setDetailViewRowId={setDetailViewRowId}
+      />
       <DetailSidebar>{showDetailView()}</DetailSidebar>
       <DispatcherView client={clientRef.current} />
     </Layout.ScrollContainer>

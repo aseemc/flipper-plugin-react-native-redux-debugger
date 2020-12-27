@@ -1,12 +1,11 @@
-import React from 'react';
-import { useValue } from 'flipper-plugin';
+import React, { useState } from 'react';
 import { Text, SearchableTable, Button, Panel } from 'flipper';
 import moment from 'moment';
 
 import { COLUMN_SIZE, COLUMNS, APP_ID, HEADER_TEXT } from '../constants';
 
-export const InspectorView = ({ instance, handleRowHighlighted }) => {
-  const data = useValue(instance.data);
+export const InspectorView = ({ client, instance, data, setDetailViewRowId }) => {
+  const [selectedIds, setSelectedIds] = useState([]);
 
   const buildRow = (row) => {
     const { id, requestTime, action: { type }, duration } = row;
@@ -33,6 +32,26 @@ export const InspectorView = ({ instance, handleRowHighlighted }) => {
 
   const clearData = () => instance.data.set({});
 
+  const handleRowHighlighted = (rowIds) => {
+    if (rowIds && rowIds.length === 1) {
+      setDetailViewRowId(rowIds[0]);
+    } else {
+      setDetailViewRowId(null);
+    }
+
+    setSelectedIds(rowIds);
+  };
+
+  const handleActionReplay = async () => {
+    try {
+      const sortedActions = selectedIds.sort();
+      const actions = sortedActions.map(id => data[id].action);
+      await client.send('dispatch', actions);
+    } catch (error) {
+      alert('Invalid action replay');
+    }
+  }
+
   return (
     <Panel floating={false} heading={HEADER_TEXT.INSPECTOR} padded={false} style={{ flex: 1 }}>
       <SearchableTable
@@ -45,7 +64,13 @@ export const InspectorView = ({ instance, handleRowHighlighted }) => {
         onRowHighlighted={handleRowHighlighted}
         rows={Object.values(data).map(buildRow)}
         stickyBottom
-        actions={(<Button onClick={clearData}>Clear</Button>)}
+        actions={(
+          <>
+            <Button onClick={clearData}>Clear</Button>
+            <Button onClick={handleActionReplay} disabled={!selectedIds.length}>Action Replay</Button>
+          </>
+        )}
+        multiHighlight
       />
     </Panel>
   );
