@@ -7,7 +7,10 @@
   "flipperBundlerEntry": "src/index.js",
   "license": "MIT",
   "keywords": [
-    "flipper-plugin"
+    "flipper",
+    "flipper-plugin",
+    "react-native",
+    "redux"
   ],
   "icon": "apps",
   "title": "AC Redux Debugger",
