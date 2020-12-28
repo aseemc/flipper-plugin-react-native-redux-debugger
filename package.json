@@ -13,7 +13,7 @@
     "redux"
   ],
   "icon": "apps",
-  "title": "AC Redux Debugger",
+  "title": "Redux Debugger",
   "category": "Redux",
   "scripts": {
     "lint": "flipper-pkg lint",

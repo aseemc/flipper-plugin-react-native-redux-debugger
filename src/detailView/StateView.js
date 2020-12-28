@@ -36,4 +36,4 @@ const StateView = ({ nextState, prevState }) => {
   )
 }
 
-export default memo(StateView);
+export default StateView;

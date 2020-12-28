@@ -8,4 +8,4 @@ const ActionView = ({ action }) => (
   </Panel>
 )
 
-export default memo(ActionView);
+export default ActionView;

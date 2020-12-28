@@ -1,8 +1,3 @@
-export const ACTION_TABS = {
-  ACTION: 'Action',
-  DISPATCH: 'Dispatch',
-}
-
 export const STATE_TABS = {
   DIFF: 'Diff',
   CURRENT: 'Current',

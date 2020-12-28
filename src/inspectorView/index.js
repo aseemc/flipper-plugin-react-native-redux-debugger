@@ -5,7 +5,7 @@ import moment from 'moment';
 import { COLUMN_SIZE, COLUMNS, APP_ID, HEADER_TEXT } from '../constants';
 
 export const InspectorView = ({ client, instance, data, setDetailViewRowId }) => {
-  const [selectedIds, setSelectedIds] = useState([]);
+  const [selectedIds, setSelectedIds] = useState();
 
   const buildRow = (row) => {
     const { id, requestTime, action: { type }, duration } = row;
@@ -30,13 +30,17 @@ export const InspectorView = ({ client, instance, data, setDetailViewRowId }) =>
     }
   }
 
-  const clearData = () => instance.data.set({});
+  const clearData = () => {
+    setDetailViewRowId();
+    setSelectedIds();
+    instance.data.set({});
+  };
 
   const handleRowHighlighted = (rowIds) => {
     if (rowIds && rowIds.length === 1) {
       setDetailViewRowId(rowIds[0]);
     } else {
-      setDetailViewRowId(null);
+      setDetailViewRowId();
     }
 
     setSelectedIds(rowIds);
@@ -67,7 +71,7 @@ export const InspectorView = ({ client, instance, data, setDetailViewRowId }) =>
         actions={(
           <>
             <Button onClick={clearData}>Clear</Button>
-            <Button onClick={handleActionReplay} disabled={!selectedIds.length}>Action Replay</Button>
+            <Button onClick={handleActionReplay} disabled={!selectedIds}>Action Replay</Button>
           </>
         )}
         multiHighlight

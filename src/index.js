@@ -24,7 +24,7 @@ export const plugin = (client) => {
 export const Component = () => {
   const instance = usePlugin(plugin);
   const data = useValue(instance.data);
-  const [detailViewRowId, setDetailViewRowId] = useState(null);
+  const [detailViewRowId, setDetailViewRowId] = useState();
 
   const showDetailView = () => {
     if (detailViewRowId) {
@@ -42,7 +42,7 @@ export const Component = () => {
         data={data}
         setDetailViewRowId={setDetailViewRowId}
       />
-      <DetailSidebar>{showDetailView()}</DetailSidebar>
+      <DetailSidebar width={400}>{showDetailView()}</DetailSidebar>
       <DispatcherView client={clientRef.current} />
     </Layout.ScrollContainer>
   );

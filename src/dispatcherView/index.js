@@ -18,7 +18,6 @@ const DispatcherView = ({ client }) => {
     const validJson = validateJson(newAction);
     if (validJson) {
       await client.send('dispatch', validJson);
-      setNewAction({});
     } else {
       alert('Invalid action.')
     }
@@ -54,4 +53,4 @@ const DispatcherView = ({ client }) => {
   )
 }
 
-export default memo(DispatcherView);
+export default DispatcherView;
