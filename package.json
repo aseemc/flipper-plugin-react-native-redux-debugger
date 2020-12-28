@@ -6,6 +6,12 @@
   "version": "1.0.5",
   "main": "dist/bundle.js",
   "flipperBundlerEntry": "src/index.js",
+  "author": "Aseem Chaudhary",
+  "homepage": "https://github.com/aseemc/flipper-plugin-react-native-redux-debugger",
+  "repository": {
+    "url": "https://github.com/aseemc/flipper-plugin-react-native-redux-debugger",
+    "type": "git"
+  },
   "license": "ISC",
   "keywords": [
     "flipper",
