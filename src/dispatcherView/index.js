@@ -53,4 +53,4 @@ const DispatcherView = ({ client }) => {
   )
 }
 
-export default DispatcherView;
+export default memo(DispatcherView);
