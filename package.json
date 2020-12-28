@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "main": "dist/bundle.js",
   "flipperBundlerEntry": "src/index.js",
-  "license": "MIT",
+  "license": "ISC",
   "keywords": [
     "flipper",
     "flipper-plugin",
