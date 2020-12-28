@@ -42,9 +42,7 @@ Manage Plugins > Install Plugins > search "RNReduxDebugger" > Install
 
 - This project is inspired by [Flutter version](https://github.com/leanflutter/flipper-plugin-reduxinspector)
 
-<br>
-
-# ISC License (ISC)
+## ISC License (ISC)
 Copyright 2020 Aseem Chaudhary
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
