@@ -6,7 +6,7 @@ Flipper desktop plugin for react native redux logs via [Client Plugin](https://g
 ![Workflow](./assets/rn-redux-flipper.gif)
 
 ## Features ✨
-- Log all dispatched redux actions
+- Show all dispatched redux actions
 - Show details about the action dispatched (action, state diff and the current state)
 - Custom action dispatcher
 - Replay selected actions
@@ -14,20 +14,25 @@ Flipper desktop plugin for react native redux logs via [Client Plugin](https://g
 
 ## Setup guide ✍🏻
 - Install the `redux-middleware-flipper` and `react-native-flipper`.
+
 ```bash
 yarn add redux-middleware-flipper react-native-flipper
 
 # for iOS
 cd ios && pod install
 ```
+
 - Add the middleware in dev mode in your redux store setup file.
+
 ```javascript
 if (__DEV__) {
   const reduxDebugger = require('redux-middleware-flipper').default;
   middleware.push(reduxDebugger());
 }
 ```
+
 - Open Flipper desktop app and install the plugin.
+
 ```
 Manage Plugins > Install Plugins > search "RNReduxDebugger" > Install
 ```
