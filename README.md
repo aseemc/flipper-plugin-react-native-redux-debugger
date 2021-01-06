@@ -37,6 +37,24 @@ if (__DEV__) {
 Manage Plugins > Install Plugins > search "RNReduxDebugger" > Install
 ```
 
+## Options
+```javascript
+if (__DEV__) {
+  const actionsBlacklist = ['SET_USER_ACCESS_TOKEN'];
+  const actionsWhitelist = ['GET_USER_PROFILE_SUCCESS'];
+  const actionReplayDelay = 500;
+
+  const reduxDebugger = require('redux-middleware-flipper').default;
+  middleware.push(reduxDebugger({ actionsBlacklist, actionsWhitelist, actionReplayDelay }));
+}
+```
+
+- `actionsBlacklist` - Will not send these action types to Flipper
+
+- `actionsWhitelist` - Will only send these action types to Flipper
+
+- `actionReplayDelay` - Delay between multiple actions dispatched via Flipper plugin action replay. Default is *500 ms*.
+
 ## References 📚
 - Getting started with [Flipper](https://fbflipper.com/docs/tutorial/intro)
 

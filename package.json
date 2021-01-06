@@ -3,7 +3,7 @@
   "name": "flipper-plugin-react-native-redux-debugger",
   "description": "RNReduxDebugger - Flipper desktop plugin for react native redux logs",
   "id": "RNReduxDebugger",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "main": "dist/bundle.js",
   "flipperBundlerEntry": "src/index.js",
   "author": "Aseem Chaudhary",
