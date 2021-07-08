@@ -1,5 +1,5 @@
 # flipper-plugin-react-native-redux-debugger
-Flipper desktop plugin for react native redux logs via [Client Plugin](https://github.com/aseemc/redux-middleware-flipper)
+Flipper desktop plugin for react native redux logs via [Client Plugin](https://www.npmjs.com/package/redux-middleware-flipper)
 
 > ❗For Flipper setup in your react native project, please refer to the [setup guide.](https://fbflipper.com/docs/getting-started/react-native)
 
