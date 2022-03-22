@@ -27,7 +27,7 @@ cd ios && pod install
 ```javascript
 if (__DEV__) {
   const reduxDebugger = require('redux-middleware-flipper').default;
-  middleware.push(reduxDebugger());
+  middleware.push(reduxDebugger({}));
 }
 ```
 
